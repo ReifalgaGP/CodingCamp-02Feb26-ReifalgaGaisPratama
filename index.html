@@ -4,14 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <!-- link css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <!--Header Content-->
-    <header></header>
-    <!-- Main Content -->
-    <main></main>
-    <!-- Footer Contemt -->
-    <footer></footer>
+
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <main class="bg-white w-full max-w-lg p-6 rounded-xl shadow-lg">
+      <!-- Header Content -->
+      <header class="mb-6 text-center">
+        <h1 class="text-3xl font-bold text-gray-800">Todo List - Gaisss</h1>
+      </header>
+
+      <!-- Input Section -->
+      <section class="space-y-3">
+        <input
+          class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          type="text"
+          id="toDoInput"
+          placeholder="Enter a new todo"
+        />
+
+        <input
+          class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          type="date"
+          id="toDoDate"
+        />
+
+        <button
+          class="w-full bg-blue-500 text-white py-2 rounded-lg font-medium hover:bg-blue-600 transition"
+          type="button"
+          onclick="addTodo()"
+        >
+          Add Todo
+        </button>
+      </section>
+
+      <!-- Action Buttons -->
+      <section class="flex justify-between items-center mt-4">
+        <button
+          class="text-red-500 text-sm hover:underline"
+          type="button"
+          onclick="deleteAllTodos()"
+        >
+          Clear All
+        </button>
+
+        <button
+          id="filterSelect"
+          class="bg-gray-500 text-white px-4 py-2 rounded-full text-sm hover:bg-gray-600 transition"
+          type="button"
+          onclick="filterTodos()"
+        >
+          Filter: All
+        </button>
+      </section>
+
+      <!-- Todo List -->
+      <section class="mt-6">
+        <header class="mb-2">
+          <h2 class="text-xl font-semibold text-gray-700 text-red-600">
+            List of Todos
+          </h2>
+        </header>
+
+        <ul id="to-do-list" class="space-y-3">
+          <li class="text-gray-400 text-sm text-center">No todos available</li>
+        </ul>
+      </section>
+    </main>
+
     <script src="js/script.js"></script>
   </body>
 </html>
